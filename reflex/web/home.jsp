@@ -82,6 +82,13 @@
                         out.print("<li><a href='#'>Manage Navigation</a></li>");
                         out.print("<li><a href='SignOutServlet'>Logout</a></li>");
                         out.print("</ul>");
+                    } else {
+                        out.print("<ul>");
+                        out.print("<li><a href='home.jsp'>Tutorial</a><li>");
+                        out.print("<li><a href='#'>Forum</a></li>");
+                        out.print("<li><a href='#'>Navigation</a></li>");
+                        out.print("<li><a href='SignOutServlet'>Logout</a></li>");
+                        out.print("</ul>");
                     } 
                 %>
                 </nav>
@@ -139,8 +146,61 @@
                 </section>
             </div>
             
+            <!-- Post for Therapist -->
+                
+                
+            <!-- Post for New Patient -->
                 <%
-                } else {}
+                    } else {
+                %>
+                
+                <!-- Features -->
+                <div class="wrapper style1">
+
+                <section id="features" class="container special">
+                    <header>
+                        <h2>REFLEXOLOGY TUTORIAL</h2>
+                        <p>Everyone can learn how to do reflexology and read a reflexology chart, it is a universal therapeutic touch therapy, similar to massage.</p>
+                    </header>
+                    <div class="row">
+                        <article class="4u 12u(mobile) special">
+                            <a href="foot.jsp" class="image featured"><img src="images/foott.jpg" width="500" height="377"/></a>
+                            <header>
+                                <h3><a href="foot.jsp">Foot Reflexology</a></h3>
+                            </header>
+                            <p>
+                                Think about how much stress your feet go through each day. No body part is more abused than your feet. 
+                                Standing, running, jumping ? our feet do it all! Reflexologists believe that overall health begins in your feet 
+                                and travels up.
+                            </p>
+                        </article>
+                        <article class="4u 12u(mobile) special">
+                            <a href="hand.jsp" class="image featured"><img src="images/hand.jpg" width="500" height="377"/></a>
+                            <header>
+                                <h3><a href="hand.jsp">Hand Reflexology</a></h3>
+                            </header>
+                            <p>
+                                We use hand reflexology mainly for do-it-yourself reflexology. Hand reflexology uses a completely 
+                                different technique to foot reflexology. Mainly because the hands are very flexible and the reflexes 
+                                are much deeper under the skin 
+                            </p>
+                        </article>
+                        <article class="4u 12u(mobile) special">
+                            <a href="ear.jsp" class="image featured"><img src="images/ear.jpg" width="500" height="377"/></a>
+                            <header>
+                                <h3><a href="ear.jsp">Ear Reflexology</a></h3>
+                            </header>
+                            <p>
+                                Ear reflexology is not as well-known as foot or hand reflexology, but it is just as effective for 
+                                relieving stress and pain. Application of ear reflexology is fast and easy. 
+                            </p>
+                        </article>
+                    </div>
+                </section>
+                </div>
+                
+                <%
+                    }
                 %>
 
             <!-- Footer -->

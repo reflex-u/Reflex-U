@@ -1,5 +1,6 @@
 package Authentication;
 
+import conn.MySQL;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -12,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class SignUpServlet extends HttpServlet {
+public class SignUp extends HttpServlet {
 @Override
 public void doPost(HttpServletRequest request, HttpServletResponse response)
 throws ServletException, IOException {
@@ -26,8 +27,7 @@ try (PrintWriter out = response.getWriter()) {
     try {
         Class.forName("com.mysql.jdbc.Driver");
         Connection con;
-        con = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/reflex-u", "root", "1234");
+        con = MySQL.getMySQLConnection();
         
         PreparedStatement ps = con.prepareStatement("insert into patient values(?,?,?,?)");
         

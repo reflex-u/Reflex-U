@@ -72,6 +72,10 @@
         <servlet-name>CreateTutorialEar</servlet-name>
         <servlet-class>servlet.CreateTutorialEar</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SignUp</servlet-name>
+        <servlet-class>Authentication.SignUp</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>uploadimage</servlet-name>
         <url-pattern>/uploadimage</url-pattern>
@@ -159,6 +163,10 @@
     <servlet-mapping>
         <servlet-name>CreateTutorialEar</servlet-name>
         <url-pattern>/CreateTutorialEar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SignUp</servlet-name>
+        <url-pattern>/SignUp</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
