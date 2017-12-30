@@ -66,7 +66,7 @@
                     if (patient != null) {
                         out.print("<ul>");
                         out.print("<li><a href='home.jsp'>Tutorial</a><li>");
-                        out.print("<li><a href='#'>Forum</a></li>");
+                        out.print("<li><a href='forumList.jsp'>Forum</a></li>");
                         out.print("<li><a href='#'>Navigation</a></li>");
                         out.print("<li><a href='SignOutServlet'>Logout</a></li>");
                         out.print("</ul>");
@@ -108,6 +108,7 @@
                     <header>
                         <h2>REFLEXOLOGY TUTORIAL</h2>
                         <p>Everyone can learn how to do reflexology and read a reflexology chart, it is a universal therapeutic touch therapy, similar to massage.</p>
+                        
                     </header>
                     <div class="row">
                         <article class="4u 12u(mobile) special">
