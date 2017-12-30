@@ -66,8 +66,12 @@
                     if (patient != null) {
                         out.print("<ul>");
                         out.print("<li><a href='home.jsp'>Tutorial</a><li>");
-                        out.print("<li><a href='#'>Forum</a></li>");
-                        out.print("<li><a href='#'>Navigation</a></li>");
+                        out.print("<li><a href='forumList.jsp'>Forum</a></li>");
+                        out.print("<li><a href='#'>Navigation & Booking</a>");
+                        out.print("<ul>");
+                        out.print("<li><a href='bookingListPt.jsp'>Booking Status</a></li>");
+                        out.print("<li><a href='findCenter.jsp'>Find Center</a></li>");
+                        out.print("</ul></li>");
                         out.print("<li><a href='SignOutServlet'>Logout</a></li>");
                         out.print("</ul>");
                     } else if (therapist != null) {
@@ -79,15 +83,25 @@
                         out.print("<li><a href='ear.jsp'>Ear Tutorial</a></li>");
                         out.print("</ul></li>");
                         out.print("<li><a href='#'>Join Forum</a></li>");
-                        out.print("<li><a href='#'>Manage Navigation</a></li>");
+                        out.print("<li><a href='#'>Navigation & Center</a>");
+                        out.print("<ul>");
+                        out.print("<li><a href='findCenter.jsp'>Find Center</a></li>");
+                        out.print("<li><a href='bookingList.jsp'>Booking List</a></li>");
+                        out.print("<li><a href='updateCenter.jsp'>Update Center</a></li>");
+                        out.print("<li><a href='createCenter.jsp'>Add Center</a></li>");
+                        out.print("</ul></li>");
                         out.print("<li><a href='SignOutServlet'>Logout</a></li>");
                         out.print("</ul>");
                     } else {
                         out.print("<ul>");
                         out.print("<li><a href='home.jsp'>Tutorial</a><li>");
                         out.print("<li><a href='#'>Forum</a></li>");
-                        out.print("<li><a href='#'>Navigation</a></li>");
-                        out.print("<li><a href='SignOutServlet'>Logout</a></li>");
+                        out.print("<li><a href='findCenter.jsp'>Navigation</a></li>");
+                        out.print("<li><a href='#'>EXPLORE MORE!</a>");
+                        out.print("<ul>");
+                        out.print("<li><a href='SignInServlet'>Sign-In</a></li>");
+                        out.print("<li><a href='SignUp'>Sign-Up</a></li>");
+                        out.print("</ul></li>");
                         out.print("</ul>");
                     } 
                 %>
@@ -108,6 +122,7 @@
                     <header>
                         <h2>REFLEXOLOGY TUTORIAL</h2>
                         <p>Everyone can learn how to do reflexology and read a reflexology chart, it is a universal therapeutic touch therapy, similar to massage.</p>
+                        
                     </header>
                     <div class="row">
                         <article class="4u 12u(mobile) special">

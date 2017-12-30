@@ -168,6 +168,8 @@
         <servlet-name>SignUp</servlet-name>
         <url-pattern>/SignUp</url-pattern>
     </servlet-mapping>
+    
+
     <session-config>
         <session-timeout>
             30
