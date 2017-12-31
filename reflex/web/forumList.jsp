@@ -168,12 +168,7 @@
                                 }
                             }
                         %>
-                        <tr>
-                            <td>&nbsp;
-                        </tr>
-                        <tr>
-                            <td>
-                        </tr>
+                        
                         <tr>
                             <td rowspan="2">Cramp
                             <td>Start date: 2017-11-30 20:25:00
@@ -181,12 +176,7 @@
                         <tr>
                             <td>Start by: Mae
                         </tr>
-                        <tr>
-                            <td>&nbsp;
-                        </tr>
-                        <tr>
-                            <td>
-                        </tr>
+                        
                         <tr>
                             <td rowspan="2">Backpain
                             <td>Start date: 2017-12-01 01:00:50

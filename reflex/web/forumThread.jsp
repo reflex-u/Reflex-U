@@ -6,10 +6,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Sharing Board</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
         <link rel="stylesheet" href="assets/css/main.css" />
-
+        <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+        
         <%
             ResultSet rset = null;
             String fId = request.getParameter("forumid");
@@ -21,7 +24,7 @@
                 //          if(!connection.isClosed())
                 //               out.println("Successfully connected to " + "MySQL server using TCP/IP...");
                 //          connection.close();
-                String sql = "Select * from forum join forumdetails on forum.forumId = forumdetails.forumId join user on forum.sender = user.username where forum.forumId ='" + fId + "'";
+                String sql = "Select * from forum join forumdetails on forum.forumId = forumdetails.forumId join user on forum.sender = user.name where forum.forumId ='" + fId + "'";
                 Statement stmnt = null;
                 stmnt = conn.createStatement();
                 rset = stmnt.executeQuery(sql);
@@ -112,14 +115,36 @@
         </style>
     </head>
     <body>
+         <div id="page-wrapper">
 
-        <div class="wrapper">
+        <!-- Header -->
+        <div id="header">
+
+            <!-- Inner -->
             <div class="inner">
+                <header>
+                    <h1><a href="index.html" id="logo">FORUM BOARD</a></h1>
+                </header>
+            </div>
+
+            <!-- Nav -->
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    
+                    <li><a href="left-sidebar.html">Tutorial</a></li>
+                    <li><a href="right-sidebar.html">Forum</a></li>
+                    <li><a href="no-sidebar.html">Navigation</a></li>
+                </ul>
+            </nav>
+
+        </div>
+        
 
         <div id="page-wrapper">
 
 
-                <h2 class="major"><%=fTitle%></h2>
+            <br><center><h2 class="major"><%=fTitle%></h2></center>
 
                 <%
                     while (rset.next()) {
@@ -138,12 +163,7 @@
                         <td><%=rset.getString("startDate")%>
                         <td align="right">#<%=rset.getString("conversationId")%>
                     </tr> 
-                    <tr>
-                            <td>&nbsp;
-                        </tr>
-                        <tr>
-                            <td>
-                        </tr>
+                    
                 </table>                 
                 <%
                 } else {
@@ -160,12 +180,7 @@
                         <td><%=rset.getString("conversationDate")%>
                         <td align="right">#<%=rset.getString("conversationId")%>
                     </tr> 
-                    <tr>
-                            <td>&nbsp;
-                        </tr>
-                        <tr>
-                            <td>
-                        </tr>
+                    
                 </table>
                 <%
                         }
@@ -176,9 +191,11 @@
                 <br>
                 <br>                
 
-                <div class="row unifrom inner">
+                <div>
+                    <center>
                     <button id="myBtn">Reply</button>
                     <a href="forumList.jsp" class="button">Back</a>
+                    </center>
                 </div>
 
 
