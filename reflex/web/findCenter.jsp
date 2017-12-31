@@ -85,17 +85,18 @@
                         } else {
                             out.print("<ul>");
                             out.print("<li><a href='home.jsp'>Tutorial</a><li>");
-                            out.print("<li><a href='#'>Forum</a></li>");
                             out.print("<li><a href='findCenter.jsp'>Navigation</a></li>");
                             out.print("<li><a href='#'>EXPLORE MORE!</a>");
                             out.print("<ul>");
+                            out.print("<li><a href='SignUp.jsp'>Sign-up</a></li>");
                             out.print("<li><a href='SignInServlet'>Sign-In</a></li>");
-                            out.print("<li><a href='SignUp'>Sign-Up</a></li>");
                             out.print("</ul></li>");
                             out.print("</ul>");
                         }
                     %>
                 </nav>
+
+
 
 
             </div>
