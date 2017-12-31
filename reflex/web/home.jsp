@@ -86,7 +86,6 @@
                         out.print("<li><a href='#'>Navigation & Center</a>");
                         out.print("<ul>");
                         out.print("<li><a href='findCenter.jsp'>Find Center</a></li>");
-                        out.print("<li><a href='bookingList.jsp'>Booking List</a></li>");
                         out.print("<li><a href='updateCenter.jsp'>Update Center</a></li>");
                         out.print("<li><a href='createCenter.jsp'>Add Center</a></li>");
                         out.print("</ul></li>");

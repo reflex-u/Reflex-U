@@ -43,11 +43,15 @@
                     Patient patient = (Patient) session.getAttribute("patient");
                     if (patient != null) {
                         out.print("<ul>");
-                        out.print("<li><a href='home.jsp'>Tutorial</a><li>");
-                        out.print("<li><a href='#'>Forum</a></li>");
-                        out.print("<li><a href='#'>Navigation</a></li>");
-                        out.print("<li><a href='SignOutServlet'>Logout</a></li>");
-                        out.print("</ul>");
+                            out.print("<li><a href='home.jsp'>Tutorial</a><li>");
+                            out.print("<li><a href='forumList.jsp'>Forum</a></li>");
+                            out.print("<li><a href='#'>Navigation & Booking</a>");
+                            out.print("<ul>");
+                            out.print("<li><a href='bookingListPt.jsp'>Booking Status</a></li>");
+                            out.print("<li><a href='findCenter.jsp'>Find Center</a></li>");
+                            out.print("</ul></li>");
+                            out.print("<li><a href='SignOutServlet'>Logout</a></li>");
+                            out.print("</ul>");
                     } else {
                         out.print("<ul>");
                         out.print("<li><a href='index.html'>Home</a></li>");

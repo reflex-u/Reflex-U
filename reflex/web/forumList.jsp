@@ -10,6 +10,7 @@
 <%@ page import="java.sql.*" %> 
 <%@ page import="java.io.*" %>
 <%@ page import="java.util.*" %>
+<%@page import="beans.*"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -130,7 +131,7 @@
             </div>
 
             <!-- Nav -->
-            <nav id="nav">
+            <!--<nav id="nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     
@@ -138,7 +139,41 @@
                     <li><a href="right-sidebar.html">Forum</a></li>
                     <li><a href="no-sidebar.html">Navigation</a></li>
                 </ul>
-            </nav>
+            </nav>-->
+            <nav id="nav">
+                    <%  Therapist therapist = (Therapist) session.getAttribute("therapist");
+                        Patient patient = (Patient) session.getAttribute("patient");
+                        if (patient != null) {
+                            out.print("<ul>");
+                            out.print("<li><a href='home.jsp'>Tutorial</a><li>");
+                            out.print("<li><a href='forumList.jsp'>Forum</a></li>");
+                            out.print("<li><a href='#'>Navigation & Booking</a>");
+                            out.print("<ul>");
+                            out.print("<li><a href='bookingListPt.jsp'>Booking Status</a></li>");
+                            out.print("<li><a href='findCenter.jsp'>Find Center</a></li>");
+                            out.print("</ul></li>");
+                            out.print("<li><a href='SignOutServlet'>Logout</a></li>");
+                            out.print("</ul>");
+                        } else if (therapist != null) {
+                            out.print("<ul>");
+                            out.print("<li><a href='#'>Manage Tutorial</a>");
+                            out.print("<ul>");
+                            out.print("<li><a href='foot.jsp'>Foot Tutorial</a></li>");
+                            out.print("<li><a href='hand.jsp'>Hand Tutorial</a></li>");
+                            out.print("<li><a href='ear.jsp'>Ear Tutorial</a></li>");
+                            out.print("</ul></li>");
+                            out.print("<li><a href='#'>Join Forum</a></li>");
+                            out.print("<li><a href='#'>Navigation & Center</a>");
+                            out.print("<ul>");
+                            out.print("<li><a href='findCenter.jsp'>Find Center</a></li>");
+                            out.print("<li><a href='updateCenter.jsp'>Update Center</a></li>");
+                            out.print("<li><a href='createCenter.jsp'>Add Center</a></li>");
+                            out.print("</ul></li>");
+                            out.print("<li><a href='SignOutServlet'>Logout</a></li>");
+                            out.print("</ul>");
+                        } 
+                    %>
+                </nav>
 
         </div>
 
