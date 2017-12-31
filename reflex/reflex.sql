@@ -19,6 +19,9 @@
 -- Table structure for table `booking`
 --
 
+create database if not exists reflex;
+use reflex; 
+
 DROP TABLE IF EXISTS `booking`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
