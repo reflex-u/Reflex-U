@@ -84,24 +84,15 @@
                             out.print("</ul>");
                         } else {
                             out.print("<ul>");
-                            out.print("<li><a href='home.jsp'>Tutorial</a><li>");
-                            out.print("<li><a href='#'>Forum</a></li>");
-                            out.print("<li><a href='findCenter.jsp'>Navigation</a></li>");
-                            out.print("<li><a href='#'>EXPLORE MORE!</a>");
-                            out.print("<ul>");
-                            out.print("<li><a href='SignInServlet'>Sign-In</a></li>");
-                            out.print("<li><a href='SignUp'>Sign-Up</a></li>");
-                            out.print("</ul></li>");
+                            out.print("<li><a href='index.html'>Home</a></li>");
                             out.print("</ul>");
                         }
                     %>
                 </nav>
-
-
             </div>
 
         </div>
-
+                
         <!-- Scripts -->
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/jquery.dropotron.min.js"></script>

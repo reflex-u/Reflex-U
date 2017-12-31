@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+﻿-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: reflex
 -- ------------------------------------------------------
@@ -18,6 +18,9 @@
 --
 -- Table structure for table `booking`
 --
+
+create database if not exists reflex;
+use reflex;
 
 DROP TABLE IF EXISTS `booking`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -81,6 +84,8 @@ UNLOCK TABLES;
 --
 -- Table structure for table `forum`
 --
+create database if not exists reflex;
+use reflex;
 
 DROP TABLE IF EXISTS `forum`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;

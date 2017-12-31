@@ -73,7 +73,7 @@
                             out.print("</ul>");
                         } else if (therapist != null) {
                             out.print("<ul>");
-                            out.print("<li><a href='#'>Manage Tutorial</a>");
+                            out.print("<li><a href='home.jsp'>Manage Tutorial</a>");
                             out.print("<ul>");
                             out.print("<li><a href='foot.jsp'>Foot Tutorial</a></li>");
                             out.print("<li><a href='hand.jsp'>Hand Tutorial</a></li>");
