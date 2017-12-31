@@ -75,6 +75,22 @@
        <section class="banner" role="banner">
             <header id="header" class="alt">
                 <h2><a href="homepage/homeview.jsp">Reflex-U</a></h2>
+
+                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/wihelp?useSSL=false", "root", "1234");
+                String sql = "SELECT * FROM forum join forumdetails on forum.forumId = forumdetails.forumId";
+                Statement stmnt = null;
+                stmnt = conn.createStatement();
+                rset = stmnt.executeQuery(sql);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        %>
+    </head>
+    <body>
+       <section class="banner" role="banner">
+            <header id="header" class="alt">
+                <h2><a href="homepage/homeview.jsp">WiHELP</a></h2>
+
                 <nav>
                     <a href="#menu">Menu</a>
                 </nav>
