@@ -1,3 +1,11 @@
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="conn.dbConnection"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.*"%>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -5,6 +13,7 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <%@page import="beans.Patient"%>
+<%@page import="beans.Therapist"%>
 <%@page import="beans.Center"%>
 
 <html>
@@ -13,6 +22,7 @@ and open the template in the editor.
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="assets/css/main.css" />
+
     </head>
 
     <body class="no-sidebar">
@@ -31,7 +41,8 @@ and open the template in the editor.
                 <!-- Nav -->
                 <nav id="nav">
                     <%Patient patient = (Patient) session.getAttribute("patient"); %>
-                    <%Center center = (Center) session.getAttribute("id");%>
+                    <%Therapist therapist = (Therapist) session.getAttribute("therapist"); %>
+                   
                     <ul>
                         <li><a href="home.jsp">Tutorial</a></li>
                         <li><a href="#">Join Forum</a></li>
@@ -44,65 +55,68 @@ and open the template in the editor.
 
             <!-- Main -->
             <div class="wrapper style1">
-                
-                        <section class="post">
-                            <form method="post" action="CreateBooking" enctype="multipart/form-data" class="alt">
-                                <div class="row uniform">
-                                         
-                                        <input type="hidden" id="centerId" value=<%= session.getAttribute("id")%> />
-                                                 
-                                                              
-                                    <div class="12u 12u(xsmall)">
-                                        <label for="name">Name</label>
-                                        <input type="text" id="name" value=<%= session.getAttribute("fullname")%> />
-                                    </div>
-                                    <div class="6u 12u(xsmall)">
-                                        <label for="phoneNo">Phone No</label>
-                                        <input type="text" id="phoneNo"  value="<%= session.getAttribute("telNo")%>" />
-                                    </div>
-                                    <div class="6u 12u(xsmall)">
-                                        <label for="email">Email</label>
-                                        <input type="email" id="email"  value="<%= session.getAttribute("email")%>" />
-                                    </div>
-                                    <div class="4u 12u(xsmall)">
-                                        <label for="date">Date</label>
-                                        <input type="date" name="date" id="date"/>
-                                    </div>
-                                    <div class="4u 12u(xsmall)">
-                                        <label for="startTime">Start Time</label>
-                                        <select name="duration"id="startTime">
-                                            <option>10 AM</option>
-                                            <option>11 AM</option>
-                                            <option>12 PM</option>
-                                            <option>1 PM</option>
-                                            <option>2 PM</option>
-                                            <option>3 PM</option>
-                                            <option>4 PM</option>
-                                            <option>5 PM</option>
-                                            <option>6 PM</option>
-                                            <option>7 PM</option>
-                                            <option>8 PM</option>
-                                            <option>9 PM</option>
-                                        </select>
-                                    </div>
-                                    <div class="4u 12u(xsmall)">
-                                        <label for="duration">Duration</label>
-                                        <select name="duration"id="duration" >
-                                            <option>1 hr</option>
-                                            <option>2 hrs</option>
-                                            <option>3 hrs</option>
-                                        </select>
-                                    </div>
 
-                                    <div class="12u" >
-                                        <center><input type="submit" value="Book"/></center>
-                                    </div>
+                <section class="post">
+                    <form method="post" action="CreateBooking" enctype="multipart/form-data" class="alt">
+                        <div class="row uniform">
+                           
+                            <div class="12u 12u(xsmall)">
+                                <label for="centerId">Center Name</label>
+                                <input type="text" id="centerId"/>
+                            </div>
+                        
+                            
+                            <div class="12u 12u(xsmall)">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" />
+                            </div>
+                            <div class="6u 12u(xsmall)">
+                                <label for="phoneNo">Phone No</label>
+                                <input type="text" id="phoneNo"  />
+                            </div>
+                            <div class="6u 12u(xsmall)">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" />
+                            </div>
+                            <div class="4u 12u(xsmall)">
+                                <label for="date">Date</label>
+                                <input type="date" name="date" id="date"/>
+                            </div>
+                            <div class="4u 12u(xsmall)">
+                                <label for="startTime">Start Time</label>
+                                <select name="duration"id="startTime">
+                                    <option>10 AM</option>
+                                    <option>11 AM</option>
+                                    <option>12 PM</option>
+                                    <option>1 PM</option>
+                                    <option>2 PM</option>
+                                    <option>3 PM</option>
+                                    <option>4 PM</option>
+                                    <option>5 PM</option>
+                                    <option>6 PM</option>
+                                    <option>7 PM</option>
+                                    <option>8 PM</option>
+                                    <option>9 PM</option>
+                                </select>
+                            </div>
+                            <div class="4u 12u(xsmall)">
+                                <label for="duration">Duration</label>
+                                <select name="duration"id="duration" >
+                                    <option>1 hr</option>
+                                    <option>2 hrs</option>
+                                    <option>3 hrs</option>
+                                </select>
+                            </div>
+                      
+                            <div class="12u" >
+                                <center><input type="submit" value="Book"/></center>
+                            </div>
 
-                                </div>
-                            </form>
-                        </section>
+                        </div>
+                    </form>
+                </section>
 
-                 
+
             </div>
 
             <!-- Footer -->

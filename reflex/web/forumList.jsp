@@ -168,87 +168,6 @@
                                 }
                             }
                         %>
-                        <tr>
-                            <td>&nbsp;
-                        </tr>
-                        <tr>
-                            <td>
-                        </tr>
-                        <tr>
-                            <td rowspan="2">Cramp
-                            <td>Start date: 2017-11-30 20:25:00
-                        </tr>
-                        <tr>
-                            <td>Start by: Mae
-                        </tr>
-                        <tr>
-                            <td>&nbsp;
-                        </tr>
-                        <tr>
-                            <td>
-
-                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/reflex-u?useSSL=false", "root", "1234");
-                String sql = "SELECT * FROM forum join forumdetails on forum.forumId = forumdetails.forumId";
-                Statement stmnt = null;
-                stmnt = conn.createStatement();
-                rset = stmnt.executeQuery(sql);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        %>
-</head>
-<body>
-    <div id="page-wrapper">
-
-        <!-- Header -->
-        <div id="header">
-
-            <!-- Inner -->
-            <div class="inner">
-                <header>
-                    <h1><a href="index.html" id="logo">FORUM LIST</a></h1>
-                </header>
-            </div>
-
-            <!-- Nav -->
-            <nav id="nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    
-                    <li><a href="left-sidebar.html">Tutorial</a></li>
-                    <li><a href="right-sidebar.html">Forum</a></li>
-                    <li><a href="no-sidebar.html">Navigation</a></li>
-                </ul>
-            </nav>
-
-        </div>
-
-        <!-- Main -->
-        <div class="wrapper style">
-
-            <div class="container">
-                       <table class="table-striped">
-                        <%
-                            String forumid = "";
-                            while (rset.next()) {
-                                String title = rset.getString("forumTitle");
-                                String starter = rset.getString("startUser");
-                                String fId = rset.getString("forumId");
-                                if (!forumid.equals(fId)) {
-                                    forumid = fId;
-                        %>
-                        <tr>
-                            <td rowspan="2"><%out.print("<a href='forumThread.jsp?forumid=" + fId + "&forumtitle=" + title + "'>" + title + "</a>");%>
-                            <td>Start date: <%=rset.getString("startDate")%>
-                        </tr>
-                        <tr>
-                            <td>Start by: <%=starter%>
-                        </tr>
-
-                        <%
-                                }
-                            }
-                        %>
                         
                         <tr>
                             <td rowspan="2">Cramp
@@ -258,7 +177,6 @@
                             <td>Start by: Mae
                         </tr>
                         
-
                         <tr>
                             <td rowspan="2">Backpain
                             <td>Start date: 2017-12-01 01:00:50
@@ -268,7 +186,7 @@
                             <td>Start by: Ain
                         </tr>
                     </table>
-                        
+                
                     <button id="myBtn">New Forum</button>
 
                     <div id="myModal" class="modal">

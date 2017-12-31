@@ -13,7 +13,7 @@ public class Center {
 
     private String id;
     private String city;
-    private String name;
+    public String name;
     private String address;
     private String contactNo;
     private String rate;

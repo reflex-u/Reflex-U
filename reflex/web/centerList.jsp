@@ -95,9 +95,12 @@
                         } else {
                             out.print("<ul>");
                             out.print("<li><a href='home.jsp'>Tutorial</a><li>");
-                            out.print("<li><a href='#'>Forum</a></li>");
                             out.print("<li><a href='findCenter.jsp'>Navigation</a></li>");
-                            out.print("<li><a href='SignOutServlet'>Logout</a></li>");
+                            out.print("<li><a href='#'>EXPLORE MORE!</a>");
+                            out.print("<ul>");
+                            out.print("<li><a href='SignUp.jsp'>Sign-up</a></li>");
+                            out.print("<li><a href='SignInServlet'>Sign-In</a></li>");
+                            out.print("</ul></li>");
                             out.print("</ul>");
                         }
                     %>
@@ -115,7 +118,7 @@
                                 <td><b>Name</b></td>
                                 <td><b>Address</b></td>
                                 <td><b>Contact No</b></td>
-                                <!--                                <td><b>Rate</b></td>-->
+
                             </tr>
                             <%                                int count = 0;
                                 String color = "#F9EBB3";
@@ -135,7 +138,6 @@
                                 <td><a href="createBooking.jsp"><%=center.get(2)%></a></td>
                                 <td><a href="https://www.google.com/maps/search/+<%=center.get(3)%>"><%=center.get(3)%></a></td>
                                 <td><a href="https://api.whatsapp.com/send?phone=6<%=center.get(4)%>"><%=center.get(4)%></a></td>
-<!--                                <td><%=center.get(5)%> <a href="rate.jsp"><img src="hand.png"></a></td>-->
 
                             </tr>
                             <%
@@ -153,7 +155,6 @@
 
 
                 </div>
-
 
                 </section>
 
