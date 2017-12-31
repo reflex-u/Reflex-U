@@ -20,7 +20,7 @@
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection conn = null;
-                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/reflex-u?useSSL=false", "root", "1234");
+                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/reflex?useSSL=false", "root", "1234");
                 //          if(!connection.isClosed())
                 //               out.println("Successfully connected to " + "MySQL server using TCP/IP...");
                 //          connection.close();

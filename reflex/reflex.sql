@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: reflex
+-- Host: 127.0.0.1    Database: reflex
 -- ------------------------------------------------------
 -- Server version	5.7.20-log
 
@@ -20,7 +20,7 @@
 --
 
 create database if not exists reflex;
-use reflex; 
+use reflex;
 
 DROP TABLE IF EXISTS `booking`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -156,7 +156,7 @@ CREATE TABLE `patient` (
 
 LOCK TABLES `patient` WRITE;
 /*!40000 ALTER TABLE `patient` DISABLE KEYS */;
-INSERT INTO `patient` VALUES ('ain@gmail.com','9596','Ain Balqis','0197626236'),('ainnn@gmail.com','000','ainnn','147898635');
+INSERT INTO `patient` VALUES ('ain@gmail.com','9596','Ain Balqis','0197626236'),('ainnn@gmail.com','000','ainnn','147898635'),('amy@gmail.com','amy','amy','0192834758');
 /*!40000 ALTER TABLE `patient` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -267,6 +267,30 @@ LOCK TABLES `tutorialhand` WRITE;
 INSERT INTO `tutorialhand` VALUES (1,'Anxiety','Reflexology is a great way of relaxing and learning to manage your stress levels and anxiety symptoms. You can also use hand reflexology in between sessions in order to manage your response to your anxiety symptoms yourself.','1. Grip your left index finger with your right hand and squeeze gently. <br>2. Hold until you can feel your heart beat then release it.<br>3. Move to the middle finger and again squeeze gently until you can feel your pulse.<br>4. Continue with the ring and little fingers and then move to your right hand.','https://www.youtube.com/embed/Glk8MAVP1sE'),(2,'BackPain','If you\'re suffering from back ache or menstrual cramps, hand reflexology provides a quick self-help treatment that can be carried out at your desk, in your car or at home.','For your neck and spine<br>1 .\'Creep\' forward along the spinal reflex - the point which runs from the middle of your wrist to the top of your thumb.<br> 2. Creep up and down this area twice, working around the base of the thumb to contact the neck.<br><br>To soothe your shoulder<br>1. \'Creep\' along your little finger from the bottom to the top - this should help relieve your shoulder.','https://www.youtube.com/embed/Oy72LfXbbWg'),(3,'BeforeSleep','In most cases, people face difficulty to fall asleep or stay asleep due to disturbed sleep.Acupressure and reflexology are an effective alternative in this case and the potent acupressure points for sleep can improve the quality of sleep.','1. Press the highlighted point for 3-5 seconds using your thumb or finger kunckle of the other hand.<br>2. Repeat on the other thumb.','https://www.youtube.com/embed/nCjwaIeUd98'),(4,'Constipation','This is a temporary hand reflexology solution for a fussy stomach and constipation problems. Do these steps two or three times a week until you find relief from your stomach and constipation problems.','Joining the Valley (LI4)<br>1. Stimulate this point by squeezing the fleshy tissue using your fingertips for about 1 minute while taking deep breaths.<br>2.  Repeat the same on your other hand.','https://www.youtube.com/embed/1eZzNw4nNE4'),(5,'Headache','Applying pressure in these specific regions of the body helps in clearing the blocked meridians so that energy may flow freely throughout the body releasing endorphins, the natural pain killer that our body produces.','1. Apply pressure and massage the top of each finger, including the nail bed of each finger, and thumb.<br>2. Repeat this on both hands for several minutes or for as long as is comfortable.<br>3. For someone suffering with blocked or painful sinus, continue the massage the length of all the ','https://www.youtube.com/embed/4BfS1V7-0vc'),(6,'MenstrualCramp','If you\'re feeling under the weather from menstrual pain, hand reflexology can help relieve cramping, back pain and general tiredness from period pain. ','For your womb<br>1. The uterus or womb reflex lies on the outside of your wrist right at the top, just below your thumb.<br>2. Because this area is quite delicate, press this \'reflex\' and hold for five to eight seconds. <br><br>For your ovary<br>1. Use the same finger to work the ovary \'reflex\'.<br>2. This point is found in front of your wrist bone, below your little finger.<br>3. Hold for five to eight seconds.<br><br>For your fallopian tubes<br>1. Creep all four fingers along your fallopian tube reflex - which wraps around the top of your wrist.','https://www.youtube.com/embed/R6r6UB6eKmc');
 /*!40000 ALTER TABLE `tutorialhand` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user` (
+  `name` varchar(10) NOT NULL,
+  `userType` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user`
+--
+
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES ('ainnn','patient'),('amy','patient'),('Yanti','therapist');
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -277,4 +301,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-01  1:54:26
+-- Dump completed on 2018-01-01  3:11:51
