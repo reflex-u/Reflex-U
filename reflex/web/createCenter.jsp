@@ -24,7 +24,7 @@ and open the template in the editor.
             <!-- Inner -->
             <div class="inner">
                 <header>
-                    <h1><a id="logo">Booking A Session</a></h1>
+                    <h1><a id="logo">Add New Center</a></h1>
                 </header>
             </div>
             
@@ -48,44 +48,28 @@ and open the template in the editor.
 		<article id="main" class="special">
                 
                     <section class="post">
-                    <form method="post" action="CreateBooking" enctype="multipart/form-data" class="alt">
+                    <form method="post" action="CreateCenter" enctype="multipart/form-data" class="alt">
                         <div class="row uniform">
                             
                             <div class="6u 12u(xsmall)">
-                                <label for="centerId">Center</label>
-                                <input type="text" id="centerId" value="<%= session.getAttribute("id") %>" />
+                                <label for="city">City</label>
+                                <input type="text" id="city" />
                             </div>                          
                             <div class="6u 12u(xsmall)">
                                 <label for="name">Name</label>
-                                <input type="text" id="name" value="<%= session.getAttribute("name") %>" />
+                                <input type="text" id="name" />
                             </div>
                             <div class="6u 12u(xsmall)">
-                                <label for="phoneNo">Phone No</label>
-                                <input type="text" id="phoneNo"  value="<%= session.getAttribute("telNo") %>" />
+                                <label for="address">Address</label>
+                                <input type="text" id="address" />
                             </div>
                             <div class="6u 12u(xsmall)">
-                                <label for="email">Email</label>
-                                <input type="email" id="email"  value="<%= session.getAttribute("email") %>" />
-                            </div>
-                            <div class="6u 12u(xsmall)">
-                                <label for="date">Date</label>
-                                <input type="date" name="date" id="date"/>
-                            </div>
-                            <div class="6u 12u(xsmall)">
-                                <label for="startTime">Start Time</label>
-                                <input type="time" name="time" id="time"/>
-                            </div>
-                            <div class="6u 12u(xsmall)">
-                                <label for="duration">Duration</label>
-                                <select name="duration"id="duration" size="3">
-                                    <option>1 hr</option>
-                                    <option>2 hrs</option>
-                                    <option>3 hrs</option>
-                                </select>
+                                <label for="contactNo">Contact No</label>
+                                <input type="text" id="contactNo" />
                             </div>
                             
                             <div class="12u" >
-                                <center><input type="submit" value="Book"/></center>
+                                <center><input type="submit" value="Add"/></center>
                             </div>
 
                         </div>

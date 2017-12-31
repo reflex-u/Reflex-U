@@ -1,19 +1,7 @@
-<%@page import="java.util.Iterator"%>
-<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.*"%>
 <%@page import="conn.dbConnection"%>
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.*"%>
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <%@page import="beans.Patient"%>
-<%@page import="beans.Therapist"%>
 <%@page import="beans.Center"%>
 
 <html>
@@ -41,12 +29,17 @@ and open the template in the editor.
                 <!-- Nav -->
                 <nav id="nav">
                     <%Patient patient = (Patient) session.getAttribute("patient"); %>
-                    <%Therapist therapist = (Therapist) session.getAttribute("therapist"); %>
+                    
                    
                     <ul>
                         <li><a href="home.jsp">Tutorial</a></li>
                         <li><a href="#">Join Forum</a></li>
-                        <li><a href="findCenter.jsp">Navigation</a></li>
+                        <li><a href='#'>Navigation</a>
+                        <ul>
+                            <li><a href="findCenter.jsp">Find Center</a></li>
+                            <li><a href="bookingListPT.jsp">Booking List</a></li>
+                        </ul>
+                    </li>
                         <li><a href="SignOutServlet">Logout</a></li>
                     </ul>
                 </nav>
@@ -57,7 +50,7 @@ and open the template in the editor.
             <div class="wrapper style1">
 
                 <section class="post">
-                    <form method="post" action="CreateBooking" enctype="multipart/form-data" class="alt">
+                    <form method="post" action="${pageContext.request.contextPath}/CreateBooking" enctype="multipart/form-data" class="alt">
                         <div class="row uniform">
                            
                             <div class="12u 12u(xsmall)">

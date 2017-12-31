@@ -50,8 +50,8 @@ private static final long serialVersionUID = 1L;
         // Store info in request attribute, before forward to views
         request.setAttribute("errorString", errorString);
         request.setAttribute("BookingList", booking);
-        
-        // Forward to /WEB-INF/views/productListView.jsp
+         
+        // Forward to 
         RequestDispatcher dispatcher = request.getServletContext()
                 .getRequestDispatcher("/bookingListPT.jsp");
         dispatcher.forward(request, response);

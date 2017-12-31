@@ -44,7 +44,7 @@ and open the template in the editor.
                     <li><a href='#'>Navigation & Center</a>
                         <ul>
                             <li><a href="findCenter.jsp">Find Center</a></li>
-                            <li><a href="updateCenter.jsp">Update Center</a></li>
+                            
                             <li><a href="createCenter.jsp">Add Center</a></li>
                         </ul>
                     </li>

@@ -68,11 +68,7 @@
                             out.print("<ul>");
                             out.print("<li><a href='home.jsp'>Tutorial</a><li>");
                             out.print("<li><a href='forumList.jsp'>Forum</a></li>");
-                            out.print("<li><a href='#'>Navigation & Booking</a>");
-                            out.print("<ul>");
-                            out.print("<li><a href='bookingListPt.jsp'>Booking Status</a></li>");
-                            out.print("<li><a href='findCenter.jsp'>Find Center</a></li>");
-                            out.print("</ul></li>");
+                            out.print("<li><a href='findCenter.jsp'>Navigation</a></li>");
                             out.print("<li><a href='SignOutServlet'>Logout</a></li>");
                             out.print("</ul>");
                         } else if (therapist != null) {
@@ -87,7 +83,6 @@
                             out.print("<li><a href='#'>Navigation & Center</a>");
                             out.print("<ul>");
                             out.print("<li><a href='findCenter.jsp'>Find Center</a></li>");
-                            out.print("<li><a href='updateCenter.jsp'>Update Center</a></li>");
                             out.print("<li><a href='createCenter.jsp'>Add Center</a></li>");
                             out.print("</ul></li>");
                             out.print("<li><a href='SignOutServlet'>Logout</a></li>");

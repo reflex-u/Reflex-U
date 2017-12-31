@@ -1,9 +1,8 @@
 <%-- 
-    Document   : bookingListPT
-    Created on : Dec 31, 2017, 5:00:58 PM
+    Document   : centerList
+    Created on : Dec 31, 2017, 3:47:57 AM
     Author     : Shameera
 --%>
-
 
 <%@page import="conn.MySQL"%>
 <%@page import="java.sql.*"%>
@@ -13,6 +12,7 @@
 <%@page import="java.sql.Statement"%>
 <%@page import="beans.*"%>
 <%@page import="conn.dbConnection"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="java.io.*" %>
 <%@ page import="java.util.*" %>
 
@@ -53,10 +53,15 @@
                 <!-- Inner -->
                 <div class="inner">
 
-                </div>
 
-                <!-- Nav -->
-                <%  Therapist therapist = (Therapist) session.getAttribute("therapist");
+                    <jsp:include page="findUser.jsp"></jsp:include>
+
+
+                    </div>
+
+                    <!-- Nav -->
+                    <nav id="nav">
+                    <%  Therapist therapist = (Therapist) session.getAttribute("therapist");
                     Patient patient = (Patient) session.getAttribute("patient");
                     if (patient != null) {
                         out.print("<ul>");
@@ -87,68 +92,57 @@
                         out.print("</ul>");
                     }
                 %>
+                </nav>
 
                 <!-- Features -->
                 <div class="wrapper style1">
 
                     <section id="features" class="container special">
-                        <table table="event" class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Date</th>
-                                    <th>Start time </th>
-                                    <th>Duration </th>
-                                </tr>
 
-                            </thead>
-                            <c:forEach items="${BookingList}" var="booking" >
-                                <tbody>
-                                    <%                                int count = 0;
-                                        String color = "#F9EBB3";
-                                        if (request.getAttribute("id") != null) {
-                                            ArrayList al = (ArrayList) request.getAttribute("id");
-                                            System.out.println(al);
-                                            Iterator itr = al.iterator();
-                                            while (itr.hasNext()) {
+                        <table class="">
 
-                                                if ((count % 2) == 0) {
-                                                    color = "#eeffee";
-                                                }
-                                                count++;
-                                                ArrayList booking = (ArrayList) itr.next();
-                                    %>
-                                    <tr>
-                                        <td>${booking.name}</td>
-                                        <td>${booking.date}</td>
-                                        <td>${booking.startTime}</td>
-                                        <td>${booking.duration}</td>
+                            <tr >
 
-                                        <td>
+                                <td><b>Name</b></td>
+                                <td><b>Address</b></td>
+                                <td><b>Contact No</b></td>
 
-                                            <a href="DeleteBooking?courtid=${booking.id}"><img src="images/rubbish-bin.png"></a>
+                            </tr>
+                            <%                                int count = 0;
+                                String color = "#F9EBB3";
+                                if (request.getAttribute("city") != null) {
+                                    ArrayList al = (ArrayList) request.getAttribute("city");
+                                    System.out.println(al);
+                                    Iterator itr = al.iterator();
+                                    while (itr.hasNext()) {
 
-                                        </td>
-                                    </tr>
-
-                                    <%
-                                            }
+                                        if ((count % 2) == 0) {
+                                            color = "#eeffee";
                                         }
-                                        if (count == 0) {
-                                    %>
-                                    <tr>
-                                        <td colspan="4"><b>No Record Found..</b></td>
-                                    </tr>
-                                    <%            }
-                                    %>
-                                </tbody>
-                            </c:forEach>
+                                        count++;
+                                        ArrayList center = (ArrayList) itr.next();
+                            %>
+                            <tr>
+                                <td><%=center.get(2)%></a></td>
+                                <td><a href="https://www.google.com/maps/search/+<%=center.get(3)%>"><%=center.get(3)%></a></td>
+                                <td><a href="https://api.whatsapp.com/send?phone=6<%=center.get(4)%>"><%=center.get(4)%></a></td>
+
+                            </tr>
+                            <%
+                                    }
+                                }
+                                if (count == 0) {
+                            %>
+                            <tr>
+                                <td colspan="3"><b>No Record Found..</b></td>
+                            </tr>
+                            <%            }
+                            %>
                         </table>
                     </section>
 
 
                 </div>
-
 
                 </section>
 
@@ -167,9 +161,4 @@
         <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
         <script src="assets/js/main.js"></script>
     </body>
-</html>
-
-
-
-</body>
 </html>

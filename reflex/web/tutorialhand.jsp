@@ -47,7 +47,7 @@
                             out.print("<li><a href='forumList.jsp'>Forum</a></li>");
                             out.print("<li><a href='#'>Navigation & Booking</a>");
                             out.print("<ul>");
-                            out.print("<li><a href='bookingListPt.jsp'>Booking Status</a></li>");
+                           
                             out.print("<li><a href='findCenter.jsp'>Find Center</a></li>");
                             out.print("</ul></li>");
                             out.print("<li><a href='SignOutServlet'>Logout</a></li>");

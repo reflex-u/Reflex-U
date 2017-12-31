@@ -34,7 +34,7 @@ public class DBUtils_Booking {
             String name = rs.getString("name");
             String phoneNo = rs.getString("phoneNo");
             String email = rs.getString("email");
-            String centerId = rs.getString("centerId");
+            String centerName = rs.getString("centerName");
             Booking booking = new Booking();
             booking.setDate(date);
             booking.setStartTime(startTime);
@@ -42,7 +42,7 @@ public class DBUtils_Booking {
             booking.setName(name);
             booking.setPhoneNo(phoneNo);
             booking.setEmail(email);
-            booking.setCenterId(centerId);
+            booking.setCenterName(centerName);
             return booking;
         }
         return null;
@@ -63,7 +63,7 @@ public class DBUtils_Booking {
             String name = rs.getString("name");
             String phoneNo = rs.getString("phoneNo");
             String email = rs.getString("email");
-            String centerId = rs.getString("centerId");
+            String centerName = rs.getString("centerName");
             Booking booking = new Booking();
             booking.setDate(date);
             booking.setStartTime(startTime);
@@ -71,7 +71,7 @@ public class DBUtils_Booking {
             booking.setName(name);
             booking.setPhoneNo(phoneNo);
             booking.setEmail(email);
-            booking.setCenterId(centerId);
+            booking.setCenterName(centerName);
             list.add(booking);
         }
         return list;
@@ -80,7 +80,7 @@ public class DBUtils_Booking {
   
 
     public static void insertBooking(Connection conn, Booking booking) throws SQLException {
-        String sql = "Insert into booking(date, startTime,duration, name, phoneNo, email, centerId) values (?,?,?,?,?,?,?)";
+        String sql = "Insert into booking(date, startTime,duration, name, phoneNo, email, centerName) values (?,?,?,?,?,?,?)";
 
         PreparedStatement pstm = conn.prepareStatement(sql);
 
@@ -90,7 +90,7 @@ public class DBUtils_Booking {
         pstm.setString(4, booking.getName());
         pstm.setString(5, booking.getPhoneNo());
         pstm.setString(6, booking.getEmail());
-        pstm.setString(7, booking.getCenterId());
+        pstm.setString(7, booking.getCenterName());
 
         pstm.executeUpdate();
     }

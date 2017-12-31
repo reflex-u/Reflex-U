@@ -46,7 +46,7 @@
 
                 <!-- Inner -->
                 <div class="inner">
-                    <jsp:include page="find.jsp"></jsp:include>
+                    <jsp:include page="findUser.jsp"></jsp:include>
                     </div>
 
                     <!-- Nav -->
@@ -58,7 +58,7 @@
                             out.print("<li><a href='home.jsp'>Tutorial</a><li>");
                             out.print("<li><a href='forumList.jsp'>Forum</a></li>");
                             out.print("<li><a href='findCenter.jsp'>Navigation</a></li>");
-                           
+                          
                             out.print("<li><a href='SignOutServlet'>Logout</a></li>");
                             out.print("</ul>");
                         } else if (therapist != null) {
@@ -73,6 +73,7 @@
                             out.print("<li><a href='#'>Navigation & Center</a>");
                             out.print("<ul>");
                             out.print("<li><a href='findCenter.jsp'>Find Center</a></li>");
+                            
                             out.print("<li><a href='createCenter.jsp'>Add Center</a></li>");
                             out.print("</ul></li>");
                             out.print("<li><a href='SignOutServlet'>Logout</a></li>");

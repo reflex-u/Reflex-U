@@ -17,20 +17,20 @@ public class Booking {
     private String name;
     private String phoneNo;
     private String email;
-    private String centerId;
-    private String status;
+    private String centerName;
+    
 
     public Booking() {
     }
 
-    public Booking(String date, String startTime, String duration, String name, String phoneNo, String email, String centerId) {
+    public Booking(String date, String startTime, String duration, String name, String phoneNo, String email, String centerName) {
         this.date = date;
         this.startTime = startTime;
         this.duration = duration;
         this.name = name;
         this.phoneNo = phoneNo;
         this.email = email;
-        this.centerId = centerId;
+        this.centerName = centerName;
      
     }
 
@@ -82,21 +82,15 @@ public class Booking {
         this.email = email;
     }
 
-    public String getCenterId() {
-        return centerId;
+    public String getCenterName() {
+        return centerName;
     }
 
-    public void setCenterId(String centerId) {
-        this.centerId = centerId;
+    public void setCenterName(String centerName) {
+        this.centerName = centerName;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
+ 
     
     
 }

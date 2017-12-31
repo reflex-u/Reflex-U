@@ -16,8 +16,12 @@ import java.sql.*;
         maxFileSize = 1024 * 1024 * 10,
         maxRequestSize = 1024 * 1024 * 50)
 
-@WebServlet(urlPatterns = {"/CreateBooking"})
-public class CreateBooking extends HttpServlet {
+/**
+ *
+ * @author Shameera
+ */
+@WebServlet(urlPatterns = {"/CreateCenter"})
+public class CreateCenter extends HttpServlet {
 
     private String getFileName(final Part part) {
         final String partHeader = part.getHeader("content-disposition");
@@ -34,17 +38,13 @@ public class CreateBooking extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String date = request.getParameter("date");
-        String startTime = request.getParameter("startTime");
-        String duration = request.getParameter("duration");
+        String city = request.getParameter("city");
         String name = request.getParameter("name");
-        String phoneNo = request.getParameter("phoneNo");
-        String email = request.getParameter("email");
-        String centerName = request.getParameter("centerName");
+        String address = request.getParameter("address");
+        String contactNo = request.getParameter("contactNo");
+
         String errorString = null;
         try {
-
-            
 
             Connection conn = null;
             try {
@@ -53,38 +53,31 @@ public class CreateBooking extends HttpServlet {
                 errorString = e.getMessage();
             }
 
-            String sql1 = "Select * from booking";
+            String sql1 = "Select * from center";
             Statement stmt = conn.createStatement();
             ResultSet rset = stmt.executeQuery(sql1);
             int count = 1;
             while (rset.next()) {
                 count++;
             }
-            
 
             PreparedStatement stmt2 = null;
-            String sql2 = "INSERT into booking values (?,?,?,?,?,?,?)";
+            String sql2 = "INSERT into center values (?,?,?,?)";
             stmt2 = conn.prepareStatement(sql2);
 
-            stmt2.setString(1, date);
-            stmt2.setString(2, startTime);
-            stmt2.setString(3, duration);
-            stmt2.setString(4, name);
-            stmt2.setString(5, phoneNo);
-            stmt2.setString(6, email);
-            stmt2.setString(7, centerName);
+            stmt2.setString(1, city);
+            stmt2.setString(2, name);
+            stmt2.setString(3, address);
+            stmt2.setString(4, contactNo);
 
             stmt2.executeUpdate();
             Boolean stat = true;
             if (stat == true) {
-                response.sendRedirect("bookingListPT.jsp");
+                response.sendRedirect("home.jsp");
             }
 
         } catch (Exception e) {
             errorString = e.getMessage();
         }
-
     }
 }
-
-
