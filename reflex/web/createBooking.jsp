@@ -34,11 +34,8 @@
                     <ul>
                         <li><a href="home.jsp">Tutorial</a></li>
                         <li><a href="#">Join Forum</a></li>
-                        <li><a href='#'>Navigation</a>
-                        <ul>
-                            <li><a href="findCenter.jsp">Find Center</a></li>
-                            <li><a href="bookingListPT.jsp">Booking List</a></li>
-                        </ul>
+                        <li><a href='findCenter.jsp'>Navigation</a>
+
                     </li>
                         <li><a href="SignOutServlet">Logout</a></li>
                     </ul>
