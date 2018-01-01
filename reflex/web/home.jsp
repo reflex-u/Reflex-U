@@ -78,7 +78,7 @@
                         out.print("<li><a href='hand.jsp'>Hand Tutorial</a></li>");
                         out.print("<li><a href='ear.jsp'>Ear Tutorial</a></li>");
                         out.print("</ul></li>");
-                        out.print("<li><a href='#'>Join Forum</a></li>");
+                        out.print("<li><a href='forumList.jsp'>Join Forum</a></li>");
                         out.print("<li><a href='#'>Navigation & Center</a>");
                         out.print("<ul>");
                         out.print("<li><a href='findCenter.jsp'>Find Center</a></li>");

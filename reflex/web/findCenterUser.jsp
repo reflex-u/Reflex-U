@@ -63,17 +63,16 @@
                             out.print("</ul>");
                         } else if (therapist != null) {
                             out.print("<ul>");
-                            out.print("<li><a href='#'>Manage Tutorial</a>");
+                            out.print("<li><a href='home.jsp'>Manage Tutorial</a>");
                             out.print("<ul>");
                             out.print("<li><a href='foot.jsp'>Foot Tutorial</a></li>");
                             out.print("<li><a href='hand.jsp'>Hand Tutorial</a></li>");
                             out.print("<li><a href='ear.jsp'>Ear Tutorial</a></li>");
                             out.print("</ul></li>");
-                            out.print("<li><a href='#'>Join Forum</a></li>");
+                            out.print("<li><a href='forumList.jsp'>Join Forum</a></li>");
                             out.print("<li><a href='#'>Navigation & Center</a>");
                             out.print("<ul>");
                             out.print("<li><a href='findCenter.jsp'>Find Center</a></li>");
-                            
                             out.print("<li><a href='createCenter.jsp'>Add Center</a></li>");
                             out.print("</ul></li>");
                             out.print("<li><a href='SignOutServlet'>Logout</a></li>");

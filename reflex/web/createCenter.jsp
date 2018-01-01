@@ -32,12 +32,24 @@ and open the template in the editor.
             <nav id="nav">
                 <%Therapist thrapist = (Therapist) session.getAttribute("therapist"); %>
                 <%Center center = (Center) session.getAttribute("center"); %>
+                
                 <ul>
-                    <li><a href="home.jsp">Tutorial</a></li>
-                    <li><a href="#">Join Forum</a></li>
-                    <li><a href="findCenter.jsp">Navigation</a></li>
-                    <li><a href="SignOutServlet">Logout</a></li>
+                    <li><a href="home.jsp">Manage Tutorial</a>
+                    <ul>
+                        <li><a href="foot.jsp">Foot Tutorial</a></li>
+                        <li><a href="hand.jsp">Hand Tutorial</a></li>
+                        <li><a href="ear.jsp">Ear Tutorial</a></li>
                     </ul>
+                    </li>
+                    <li><a href="forumList.jsp">Join Forum</a></li>
+                    <li><a href="#">Navigation & Center</a>
+                    <ul>
+                        <li><a href="findCenter.jsp">Find Center</a></li>
+                        <li><a href="createCenter.jsp">Add Center</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="SignOutServlet">Logout</a></li>
+                </ul>
             </nav>
 
 	</div>
